@@ -1,0 +1,70 @@
+Abstraction -
+
+       ➡️ No need to know everything
+        hide unnecessary details from a client ans showcase
+        ony what required
+
+        ➡️It refers to the concept of hiding complex implementation details and showing only the necessary features of an object. This helps in reducing programming complexity and effort.
+
+                Purpose: To expose only relevant functionalities and hide internal details.
+
+                Example: When you use a TV remote, you only interact with buttons (interface), not the internal circuit (implementation).
+
+        Data hiding
+
+➡️virtual keyword -
+        In C++, abstraction is achieved using abstract classes and interfaces. The virtual keyword is essential for creating polymorphic behavior and supporting abstraction.
+
+➡️ override keyword
+The override keyword in C++ is used when a derived class overrides a virtual function from its base class.
+
+😇Is override necessary?
+Not strictly necessary: You can override a virtual function without using override, but it is highly recommended.
+Best practice: Using override makes your code safer and more readable.
+
+➡️A virtual function is a function in a base class that you expect to override in derived classes.
+
+class Animal {
+        public:
+        virtual void sound() { 
+                cout << "Some sound" << endl;
+        }
+};
+class Dog : public Animal {
+        public:
+        void sound() override {
+                cout << "Bark" << endl;
+        }
+};
+
+
+➡️ Pure Virtual Func-
+        Declared with = 0, must be overridden in derived classes
+
+➡️Abstract Class
+        An abstract class in C++ is a class that has at least one pure virtual function. You cannot instantiate an abstract class directly.
+
+class Shape {
+        public:
+        virtual void draw() = 0; // Pure virtual function
+};
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Circle" << endl;
+    }
+};
+
+-> virtual void draw() = 0; makes Shape an abstract class.
+->Any class inheriting from Shape must implement the draw() function
+
+Note :
+"virtual" Enables runtime polymorphism, allows overriding in derived classes
+Use virtual for polymorphism and abstraction.
+Abstract classes define interfaces for derived classes.
+Pure virtual functions enforce implementation in derived classes.
+
+
+Run Program -
+
+g++ file.cpp -o file.exe

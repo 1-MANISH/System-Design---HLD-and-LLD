@@ -1,0 +1,118 @@
+OOPS -
+        Object oriented Programming
+
+History of Programming
+
+                Machine code - {0/1}-->cpu----> then cpu executes somethings
+                |
+                |
+                Assembly language
+                        Using numenics
+                        Tightly coupled with Hardware
+                        mov A 16H 
+                |
+                |
+                Procedural Programming
+                        Except OOPS
+                                Fxns
+                                Loops
+                                Not able to solve large problem
+                        Set of Instruction
+                        ex - code
+
+                |
+                |
+                Object oriented Programming
+                        Real word modeling ✔️
+                        Data Security ✔️
+                        Scalable & Reusable ✔️
+
+--------------------------------
+
+Want to Solve any Real world problem
+        It'll be complex
+
+        IN real world everything can be mapped as object
+        Objects - They interact with each other
+
+                -characters
+                -behavior
+
+        Example
+
+        CAR 🚗 - 
+                char -
+                        📜engine
+                        📜brand
+                        📜model
+                        📜wheels
+                        📜etc
+                behavior-
+                        ➡️start()
+                        ➡️stop()
+                        ➡️gearShift()
+                        ➡️accelerate()
+                        ➡️brake()
+
+        IN Programming we wanted to map
+        Thats why we need OOPS
+
+------------------------------------
+
+
+Oops vs Procedural Programming
+
+CAR 🚗 - 
+                char(properties) -
+                        📜isEngineOn
+                        📜brand
+                        📜model
+                        📜wheels
+
+                behavior (methods)-
+                        ➡️start()
+                        ➡️stop()
+                        ➡️gearShift()
+                        ➡️accelerate()
+                        ➡️brake()
+
+
+        In Procedural Programming - 
+             How many things we have to declare and
+             Write code again and again , more memory used
+             If two things interact than complexity will increase rapidly
+
+
+        This for one CAR
+        If we have Owner as well as - lag gyee
+                Then repeat same things
+
+        😅Not Scalable
+        😅Not Reusable
+        😅Not able to model and map real world things
+
+
+OOPS -
+        What it say/do
+
+        Map Real world entities
+
+        Objects <-->Objects
+        They do interaction together
+
+
+        Create a blue print of CAR
+
+        class Car {
+                // properties
+
+                // methods
+        }
+
+        class Owner {
+                //code
+        }
+
+        -✔️Reusable
+        -✔️Maping become easy
+

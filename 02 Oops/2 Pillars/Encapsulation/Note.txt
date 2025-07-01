@@ -1,0 +1,26 @@
+Encapsulation in C++
+
+What is Encapsulation?
+        ➡️Encapsulation is the process of bundling data (variables) and methods (functions) that operate on the data into a single unit called a class.
+
+         ➡️It restricts direct access to some of the object's components, which is a means of [data Security].
+
+         ➡️Only the necessary information is exposed, and the rest is hidden from outside interference and misuse.
+
+Access Specifiers
+
+        private: Members are accessible only within the class.
+
+        protected: Members are accessible within the class and its derived classes.
+        
+        public: Members are accessible from outside the class.
+
+Getters and Setters
+
+        Public methods to access (get) or modify (set) private data members.
+
+Benefits
+
+        Increased security of data.
+        Better control over data.
+        Flexibility and maintainability.
