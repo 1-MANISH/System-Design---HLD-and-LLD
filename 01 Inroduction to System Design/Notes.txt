@@ -1,0 +1,17 @@
+➡️ How Big System Work
+
+LLD - Machine Code / Code Structure
+
+        1.Scalable
+        2.Maintainable
+        3.Reusable
+
+HLD - System Architecture
+
+        Tech Stack
+        Database
+        Server Scalable
+        Cost optimization
+        Zero Code
+
+If Dsa a brain Of Application then LLD is skeleton
