@@ -1,0 +1,107 @@
+➡️Inheritance in OOP (General Concept)
+        Inheritance is a fundamental concept in Object-Oriented Programming (OOP).
+
+        It allows a new class (derived/child class) to acquire the properties and behaviors (data and methods) of an existing class (base/parent class).
+
+        Promotes code "reusability" and establishes a "relationship" between classes.
+
+        Example:
+        A Car class can be a base class, and SportsCar and ManualCar can be derived classes that inherit from Car.
+
+        class BaseClass {
+                // members
+        };
+
+        class DerivedClass : access_specifier BaseClass {
+                // additional members
+        };
+
+➡️Access Specifiers in Inheritance
+
+        public: Public and protected members of the base class become public and protected in the derived class.
+
+        protected: Public and protected members of the base class become protected in the derived class.
+
+        private: Public and protected members of the base class become private in the derived class.
+
+➡️Types of Inheritance in C++
+
+        ✔️Single Inheritance-
+        One base class, one derived class.
+        // Analogy - A Car is a type of Vehicle.
+
+        class A {};
+        class B : public A {};
+
+        ✔️Multiple Inheritance
+        One derived class inherits from more than one base class.
+        // Analogy - a smart phone is both phone and camera.
+
+        class A {};
+        class B {};
+        class C : public A, public B {};
+
+        ✔️Multilevel Inheritance
+        Derived class inherits from another derived class.
+        // Analogy - A Sports Car is a type of Car. and Car is a type of Vehicle.
+
+        class A {};
+        class B : public A {};
+        class C : public B {};
+
+        ✔️Hierarchical Inheritance
+        Multiple derived classes inherit from a single base class.
+        // Analogy - So the Dog and cat both are animal
+
+        class A {};
+        class B : public A {};
+        class C : public A {};
+
+        ✔️Hybrid Inheritance
+        Combination of two or more types of inheritance.
+        
+        Note :
+        Constructor and Destructor in Inheritance
+
+        Base class constructor is called first, then derived class constructor.
+
+        Destructors are called in reverse order.
+
+        virtual: Used for runtime polymorphism and to avoid ambiguity in multiple inheritance (virtual base class).
+
+➡️The Diamond Problem
+        In C++, the diamond problem occurs in multiple inheritance when two classes inherit from the same base class, and a fourth class inherits from both of them. This can cause ambiguity because the fourth class gets two copies of the base class.
+
+        Real-world analogy:
+        Imagine a company where both the HR and Finance departments inherit policies from the Company. If an employee is part of both departments, which version of the Company’s policy should they follow? This ambiguity is the diamond problem.
+
+        Virtual Base Class Solution
+        To solve this, C++ provides virtual inheritance. By declaring the base class as a virtual base, only one copy of the base class is inherited, avoiding ambiguity.
+
+        virtual Keyword Before Access Modifier
+      "  In C++, you use virtual before the access specifier to indicate virtual inheritance"
+
+
+
+        //Base class
+        class CompanyPolicy {
+                public:
+                void showPolicy() {
+                        cout << "General company policy applies." << endl;
+                }
+        };
+
+        // HR inherits virtually from CompanyPolicy
+        class HR : virtual public CompanyPolicy { };
+
+        // Finance inherits virtually from CompanyPolicy
+        class Finance : virtual public CompanyPolicy { };
+
+        // Employee inherits from both HR and Finance
+        class Employee : public HR, public Finance { };
+
+        int main() {
+                Employee e;
+                e.showPolicy(); // No ambiguity, only one copy of CompanyPolicy
+                return 0;
+        }

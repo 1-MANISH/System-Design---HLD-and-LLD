@@ -116,3 +116,6 @@ OOPS -
         -✔️Reusable
         -✔️Maping become easy
 
+
+Run Program -  in c++
+g++ file.cpp -o file.exe

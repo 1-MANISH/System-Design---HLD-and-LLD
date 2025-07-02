@@ -1,0 +1,123 @@
+
+📜Polymorphism 
+        means "many forms.
+        In c++ , it allows objects to be treated as instances of their parent class rather than their actual derived class. This enables flexibility and reusability in code.
+
+Types of Polymorphism
+
+        ➡️1. Static Polymorphism (Compile-Time)
+
+        Achieved by: 
+               ✅ Function Overloading (just parameter different)
+               ✅Operator Overloading.
+
+        Resolved at: Compile time.
+
+        How: The compiler determines which function to call based on the function signature.
+
+        class Print {
+                public:
+                void show(int i) {
+                        cout << "Integer: " << i << endl;
+                }
+                void show(double d) {
+                        cout << "Double: " << d << endl;
+                }
+        };
+
+        int main() {
+        Print obj;
+        obj.show(5);      // Calls show(int)
+        obj.show(3.14);   // Calls show(double)
+        return 0;
+        }
+
+        ✅2. Dynamic Polymorphism (Run-Time)
+
+        Achieved by: Method Overriding using Virtual Functions.
+
+        Resolved at: Run time.
+
+        How: The function to be called is determined at runtime based on the actual object type.
+
+        Example: Virtual Functions
+
+#include <iostream>
+using namespace std;
+
+        class Animal {
+                public:
+                virtual void sound() { // virtual function
+                        cout << "Some generic animal sound" << endl;
+                }
+        };
+
+        class Dog : public Animal {
+        public:
+        void sound() override { // method overriding
+                cout << "Woof!" << endl;
+        }
+        };
+
+        int main() {
+                Animal* a;
+                Dog d;
+                a = &d;
+                a->sound(); // Calls Dog's sound() due to dynamic binding
+                return 0;
+        }
+
+
+
+Note:
+
+return_type operator op (parameter_list) {
+    // implementation
+}
+
+the const keyword is used for parameters (like const Complex& obj) to ensure that the passed object is not modified inside the operator function.
+This is important for safety and allows you to pass both const and non-const objects.
+
+Benefits:
+
+Prevents accidental modification of input objects.
+Allows operator to work with const objects.
+Good coding practice for functions that do not modify their arguments.
+
+
+The :: operator in C++ is called the scope resolution operator.
+It is used to define or access members (variables, functions) of a class, namespace, or to specify global variables/functions.
+
+
+1. Accessing a global variable when a local variable has the same name:
+int x = 10; // global variable
+
+int main() {
+    int x = 20; // local variable
+    cout << x << endl;    // prints 20 (local)
+    cout << ::x << endl;  // prints 10 (global)
+    return 0;
+}
+
+
+class Demo {
+public:
+    void show();
+};
+
+2.Defining a class function outside the class
+
+:void Demo::show() { // scope resolution operator
+    cout << "Hello from Demo!" << endl;
+}
+
+3.Accessing static members of a class:
+class Test {
+public:
+    static int count;
+};
+int Test::count = 0; // define static member outside class
+
+Casting of object
+
+static_cast<type*>(obj)

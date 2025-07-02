@@ -65,6 +65,3 @@ Abstract classes define interfaces for derived classes.
 Pure virtual functions enforce implementation in derived classes.
 
 
-Run Program -
-
-g++ file.cpp -o file.exe
