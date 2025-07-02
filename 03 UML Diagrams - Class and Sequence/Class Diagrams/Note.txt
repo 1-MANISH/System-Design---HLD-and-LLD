@@ -1,0 +1,10 @@
+ Class Diagram
+        Shows classes, their attributes, methods, and relationships.
+
+Symbols:
+
+        Class: Rectangle divided into 3 parts (Name, Attributes, Methods)
+        Association: Line connecting classes
+        Inheritance (Generalization): Line with a hollow triangle (──▷)
+        Aggregation: Line with a hollow diamond (──◇)
+        Composition: Line with a filled diamond (──◆)

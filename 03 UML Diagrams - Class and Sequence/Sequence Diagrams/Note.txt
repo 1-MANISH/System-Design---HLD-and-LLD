@@ -1,0 +1,8 @@
+Sequence Diagram
+Shows object interactions in time sequence.
+
+Symbols:
+
+        Object/Lifeline: Rectangle with dashed vertical line
+        Activation: Thin rectangle on lifeline
+        Message: Arrow between lifelines

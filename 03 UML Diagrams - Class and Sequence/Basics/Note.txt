@@ -1,0 +1,28 @@
+
+📜What is UML?
+
+        UML (Unified Modeling Language) is a standardized way to visualize the design of a system. It helps developers, architects, and stakeholders understand, design, and document software systems using diagrams.
+
+Why Use UML?
+        Visualize system architecture and design.
+        Communicate ideas clearly among team members.
+        Document requirements, structure, and behavior.
+        Plan and analyze before coding.
+
+📜Types of UML Diagrams
+        UML diagrams are mainly divided into two categories:
+
+        1. Structural Diagrams (show static structure)
+                Class Diagram
+                Object Diagram
+                Component Diagram
+                Deployment Diagram
+                Package Diagram
+        2. Behavioral Diagrams (show dynamic behavior)
+                Use Case Diagram
+                Sequence Diagram
+                Activity Diagram
+                State Diagram
+                Communication Diagram
+
+        
