@@ -1,0 +1,165 @@
+SOLID design principles—
+        the five key object-oriented design principles for writing 
+                maintainable, 
+                flexible, and 
+                scalable code. 
+
+
+                ✔️clean code
+                ✔️maintainable
+               ✔️ good architect of application
+        
+        Problems we will gonna face if we do'nt follow this design principles
+
+        1. maintainability
+        2. Readability
+        3. Lots of bugs
+
+
+
+📜 1. — Single Responsibility Principle (SRP)
+
+        A class should have only one reason to change, meaning it should have only one job or responsibility.
+
+        Real-life Example:
+        A cashier in a store only handles billing, not stocking shelves or cleaning.
+
+        Code Example:
+
+                class InvoicePrinter {
+                        public:
+                        void printInvoice() { /* printing logic */ }
+                };
+
+                class InvoiceSaver {
+                        public:
+                        void saveToFile() { /* saving logic */ }
+                }
+
+        Bad: If you put both printing and saving in one class, changing one responsibility may affect the other.
+
+
+
+📜 2.  — Open/Closed Principle (OCP)
+
+        Software entities (classes, modules, functions) should be open for extension, but closed for modification.
+
+        Real-life Example:
+        A power strip lets you plug in more devices (extension) without changing the strip itself (modification).
+
+        Code Example:
+
+                class Shape {
+                        public:
+                        virtual double area() = 0;
+                };
+
+                class Rectangle : public Shape {
+                        public:
+                        double area() override { /* ... */ }
+                };
+
+                class Circle : public Shape {
+                        public:
+                        double area() override { /* ... */ }
+                };
+
+        Good: You can add new shapes by extending `Shape` without modifying existing code.
+
+
+📜3.  — Liskov Substitution Principle (LSP)
+
+
+        Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
+
+        Real-life Example:
+        You can use a credit card or a debit card to pay; both work wherever a "card" is accepted.
+
+        Code Example:
+    
+                class Bird {
+                        public:
+                        virtual void fly() {}
+                };
+
+                class Sparrow : public Bird {
+                        public:
+                        void fly() override { /* ... */ }
+                };
+       
+        Bad Example: If you add a `Penguin` class that cannot fly, substituting it for `Bird` may break code expecting all birds to fly.
+
+
+📜4.  — Interface Segregation Principle (ISP)
+
+
+        Clients should not be forced to depend on interfaces they do not use.
+
+        Real-life Example:
+        A basic TV remote has only essential buttons; a universal remote with too many buttons can confuse users who only need basic functions.
+
+        Code Example:
+
+                class Printer {
+                        public:
+                        virtual void print() = 0;
+                };
+
+                class Scanner {
+                        public:
+                        virtual void scan() = 0;
+                };
+
+                class MultiFunctionPrinter : public Printer, public Scanner {
+                        // Implements both print and scan
+                };
+
+        Good: Separate interfaces for print and scan, so a simple printer doesn't need to implement scan.
+
+
+
+📜5. D — Dependency Inversion Principle (DIP)
+
+        High-level modules should not depend on low-level modules. Both should depend on abstractions.
+
+        Real-life Example:
+        A universal charger uses adapters (abstractions) so it can charge any device, not just one specific type.
+
+        Code Example:
+
+                class IMessageSender {
+                        public:
+                        virtual void sendMessage(const string& msg) = 0;
+                };
+
+                class EmailSender : public IMessageSender {
+                        public:
+                        void sendMessage(const string& msg) override { /* send email */ }
+                };
+
+                class Notification {
+                        IMessageSender* sender;
+                        public:
+                                Notification(IMessageSender* s) : sender(s) {}
+                                void notify(const string& msg) {
+                                        sender->sendMessage(msg);
+                                }
+                };
+
+        *Good:* `Notification` depends on the abstraction `IMessageSender`, not a concrete `EmailSender`.
+
+
+
+
+        | Principle | Meaning                   | Real-life Analogy                   |
+        |-----------|----------------------- |---------------------------------|
+        | SRP        | One class, one job    | Cashier only bills                   |
+        | OCP        | Extend, don’t modify | Power strip                          |
+        | LSP        | Subtypes replace base types | Credit/Debit cards  |
+        | ISP        | Small, focused interfaces | Simple TV remote        |
+        | DIP        | Depend on abstractions | Universal charger            |
+
+
+        Note  -SOLID principles help you write code that is easier to maintain, extend, test, and refactor.  
+
+        
