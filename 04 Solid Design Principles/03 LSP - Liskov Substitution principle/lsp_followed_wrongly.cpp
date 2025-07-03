@@ -89,7 +89,7 @@ class BankClient{
                                         try{
                                         acc->withdraw(500);
                                 }
-                                        catch(logic_error e){
+                                        catch(logic_error& e){
                                                 cout<<"Exception caught " << e.what()<<endl;
                                         }
                                 }
