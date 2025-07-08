@@ -15,3 +15,6 @@ HLD - System Architecture
         Zero Code
 
 If Dsa a brain Of Application then LLD is skeleton
+
+
+https://excalidraw.com/#json=buF81HUAyEbTmZf5FeXnh,YNGcXb1L7uHT-W0lNTLftw
